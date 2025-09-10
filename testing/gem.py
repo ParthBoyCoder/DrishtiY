@@ -1,7 +1,7 @@
 import base64
 import requests
 
-API_KEY = 'AIzaSyB-Tc04NNO_BcV84JhdJy3BdEi2fsraK08'
+API_KEY = ''
 URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={API_KEY}"
 
 
@@ -32,4 +32,5 @@ payload = {
 headers = {"Content-Type": "application/json"}
 response = requests.post(URL, headers=headers, json=payload)
 data=response.json()
+
 print(data['candidates'][0]['content']['parts'][0]['text'])
